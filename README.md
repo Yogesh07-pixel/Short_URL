@@ -4,6 +4,7 @@ A URL Shortener made with the help of Node.js and MongoDB as Database.
 
 # Features 
 👉 Shorten your URLs Easily.
+
 👉 Share with anyone.
 
 # ShortID npm package 
