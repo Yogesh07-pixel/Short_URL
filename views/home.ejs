@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=\, initial-scale=1.0" />
+    <title>Home Page</title>
+    <style>
+      body {
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+        text-align: center;
+        background: linear-gradient(to left,#98caa3, #9198e5); 
+        font-size: 25px;
+      }
+      #box-2 {
+        display: inline-block;
+        margin-top: 2rem;
+      }
+      #text{
+        font-family:cursive;
+        color: #31884e;
+      }
+      button{
+        font-size: 18px;
+        padding: 5px;
+        background-color: green;
+        border: none;
+      }
+      .input_field{
+        font-size: 23px;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>URL <span id="text">Shortener</span></h1>
+      <div class="box1">
+        <form action="/url" method="post">
+          <label><b>Enter Your Original URL</b></label>
+          <input class="input_field" type="text" name="url" placeholder="http://example.com" />
+          <button type="submit">Generate</button>
+        </form>
+      </div>
+      <% if (locals.id) { %>
+      <p>URL Generated http://localhost:8001/url/<%= id %></p>
+      <div>
+        <% } %> <% if (locals.urls) { %>
+        <table >
+        <table id="box-2">
+          <thead>
+            <th>S. NO</th>
+            <th>ShortID</th>
+            <th>Redirect</th>
+            <th>Clicks</th>
+          </thead>
+          <tbody>
+            <% urls.forEach((url, index) => { %>
+            <tr>
+              <td><%= index + 1 %></td>
+              <td><%= url.shortId %></td>
+              <td><%= url.redirectURL %></td>
+              <td><%= url.visitHistory.length %></td>
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
+        <% } %>
+      </div>
+    </div>
+  </body>
+</html>
