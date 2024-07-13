@@ -12,3 +12,9 @@ npm install shortid
 
 # DataBase
 Used MongoDB to save the generated shorten urls.
+
+#Cookie_parser
+Used to parse the cookies.
+
+#UUID Package
+Used to generate and assign the session id to each user.
